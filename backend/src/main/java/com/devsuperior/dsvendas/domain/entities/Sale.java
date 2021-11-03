@@ -1,4 +1,4 @@
-package com.devsuperior.dsvendas.entities;
+package com.devsuperior.dsvendas.domain.entities;
 
 import java.time.OffsetDateTime;
 
