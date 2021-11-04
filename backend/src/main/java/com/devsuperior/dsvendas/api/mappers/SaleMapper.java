@@ -1,9 +1,7 @@
 package com.devsuperior.dsvendas.api.mappers;
 
-import java.util.List;
-import java.util.stream.Collectors;
-
 import org.modelmapper.ModelMapper;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Component;
 
 import com.devsuperior.dsvendas.api.dto.SaleDTO;
@@ -22,8 +20,8 @@ public class SaleMapper {
 			return modelMapper.map(sale, SaleDTO.class);
 		}
 		
-		public List<SaleDTO> toCollectionModel(List<Sale> sales){
-			return sales.stream().map(this::toModel).collect(Collectors.toList());
+		public Page<SaleDTO> toCollectionDTO(Page<Sale> sales){
+			return sales.map(this::toModel);
 		}
 		
 		public Sale toEntity(Sale saleDTO) {

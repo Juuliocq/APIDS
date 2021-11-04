@@ -13,7 +13,6 @@ public class SellerService {
 	private SellerRepository sellerRepository;
 		
 	public SellerService(SellerRepository sellerRepository) {
-		super();
 		this.sellerRepository = sellerRepository;
 	}
 

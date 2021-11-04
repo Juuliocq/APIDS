@@ -19,7 +19,6 @@ public class SellerController {
 	private SellerMapper sellerMapper;
 	
 	public SellerController(SellerService sellerService, SellerMapper sellerMapper) {
-		super();
 		this.sellerService = sellerService;
 		this.sellerMapper = sellerMapper;
 	}
