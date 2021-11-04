@@ -11,22 +11,24 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.devsuperior.dsvendas.api.dto.SaleDTO;
 import com.devsuperior.dsvendas.api.dto.SaleSuccessDTO;
-import com.devsuperior.dsvendas.api.dto.SaleSumDTO;
+import com.devsuperior.dsvendas.api.dto.SellerSalesSumDTO;
 import com.devsuperior.dsvendas.api.mappers.SaleMapper;
 import com.devsuperior.dsvendas.domain.services.SaleService;
 import com.devsuperior.dsvendas.domain.services.SaleSuccessService;
-import com.devsuperior.dsvendas.domain.services.SaleSumService;
+import com.devsuperior.dsvendas.domain.services.SellerSalesSumService;
 
 @RestController
 @RequestMapping("/sales")
 public class SaleController {
 
 	private SaleService saleService;
-	private SaleSumService saleSumService;
+	private SellerSalesSumService saleSumService;
 	private SaleSuccessService saleSuccessService;
 	private SaleMapper saleMapper;
 	
-	public SaleController(SaleService saleService, SaleMapper saleMapper, SaleSumService saleSumService, SaleSuccessService saleSuccessService) {
+	public SaleController(SaleService saleService, SaleMapper saleMapper, SellerSalesSumService saleSumService,
+						SaleSuccessService saleSuccessService) {
+		
 		this.saleService = saleService;
 		this.saleMapper = saleMapper;
 		this.saleSumService = saleSumService;
@@ -40,8 +42,8 @@ public class SaleController {
 	}
 	
 	@GetMapping("/sum-by-seller")
-	public ResponseEntity<List<SaleSumDTO>> amountGroupedBySeller(){
-		List<SaleSumDTO> list = saleSumService.amountGroupedBySeller();
+	public ResponseEntity<List<SellerSalesSumDTO>> amountGroupedBySeller(){
+		List<SellerSalesSumDTO> list = saleSumService.amountGroupedBySeller();
 		
 		return ResponseEntity.ok(list);
 	}

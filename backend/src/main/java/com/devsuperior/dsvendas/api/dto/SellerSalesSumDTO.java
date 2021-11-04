@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 import com.devsuperior.dsvendas.domain.entities.Seller;
 
-public class SaleSumDTO implements Serializable {
+public class SellerSalesSumDTO implements Serializable {
 	
 	/**
 	 * 
@@ -14,9 +14,9 @@ public class SaleSumDTO implements Serializable {
 	private String sellerName;
 	private Double sum;
 	
-	public SaleSumDTO() {}
+	public SellerSalesSumDTO() {}
 	
-	public SaleSumDTO(Seller seller, Double sum) {
+	public SellerSalesSumDTO(Seller seller, Double sum) {
 		this.sellerName = seller.getName();
 		this.sum = sum;
 	}
