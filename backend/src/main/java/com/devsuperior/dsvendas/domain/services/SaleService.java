@@ -25,5 +25,5 @@ public class SaleService {
 		
 		sellerRepository.findAll();
 		return saleRepository.findAll(pageable);
-	}	
+	}
 }

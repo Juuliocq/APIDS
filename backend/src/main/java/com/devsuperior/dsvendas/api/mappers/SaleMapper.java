@@ -16,12 +16,12 @@ public class SaleMapper {
 			this.modelMapper = modelMapper;
 		}
 
-		public SaleDTO toModel(Sale sale) {
+		public SaleDTO toDTO(Sale sale) {
 			return modelMapper.map(sale, SaleDTO.class);
 		}
 		
 		public Page<SaleDTO> toCollectionDTO(Page<Sale> sales){
-			return sales.map(this::toModel);
+			return sales.map(this::toDTO);
 		}
 		
 		public Sale toEntity(Sale saleDTO) {
