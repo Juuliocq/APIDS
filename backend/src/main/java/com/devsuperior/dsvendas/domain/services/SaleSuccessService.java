@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.devsuperior.dsvendas.api.dto.SaleSuccessDTO;
+import com.devsuperior.dsvendas.api.dto.SellerSalesSuccessDTO;
 import com.devsuperior.dsvendas.domain.repositories.SaleRepository;
 
 @Service
@@ -18,7 +18,7 @@ public class SaleSuccessService {
 	}
 
 	@Transactional(readOnly = true)
-	public List<SaleSuccessDTO> successGroupedBySeller(){
+	public List<SellerSalesSuccessDTO> successGroupedBySeller(){
 		return saleRepository.successGroupedBySeller();
 	};
 }

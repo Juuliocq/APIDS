@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 import com.devsuperior.dsvendas.domain.entities.Seller;
 
-public class SaleSuccessDTO implements Serializable{
+public class SellerSalesSuccessDTO implements Serializable{
 	
 	/**
 	 * 	
@@ -14,7 +14,7 @@ public class SaleSuccessDTO implements Serializable{
 	private Long visisted;
 	private Long deals;
 	
-	public SaleSuccessDTO(Seller seller, Long visited, Long deals) {
+	public SellerSalesSuccessDTO(Seller seller, Long visited, Long deals) {
 		this.sellerName = seller.getName();
 		this.visisted = visited;
 		this.deals = deals;

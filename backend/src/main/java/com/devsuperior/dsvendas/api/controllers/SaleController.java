@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.devsuperior.dsvendas.api.dto.SaleDTO;
-import com.devsuperior.dsvendas.api.dto.SaleSuccessDTO;
+import com.devsuperior.dsvendas.api.dto.SellerSalesSuccessDTO;
 import com.devsuperior.dsvendas.api.dto.SellerSalesSumDTO;
 import com.devsuperior.dsvendas.api.mappers.SaleMapper;
 import com.devsuperior.dsvendas.domain.services.SaleService;
@@ -49,8 +49,8 @@ public class SaleController {
 	}
 	
 	@GetMapping("/success-by-seller")
-	public ResponseEntity<List<SaleSuccessDTO>> successGroupedBySeller(){
-		List<SaleSuccessDTO> list = saleSuccessService.successGroupedBySeller();
+	public ResponseEntity<List<SellerSalesSuccessDTO>> successGroupedBySeller(){
+		List<SellerSalesSuccessDTO> list = saleSuccessService.successGroupedBySeller();
 		
 		return ResponseEntity.ok(list);
 	}
